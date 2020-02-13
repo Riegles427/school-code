@@ -3,56 +3,56 @@ BOXES   CSECT
 *********************************************************************
 *	AUTHOR:	     OWEN A. RIEGLE
 *	DESCRIPTION: COMPUTES THE VOLUME OF TWO BOXES AND THEN 
-*                COMPUTES THE AVERAGE OF THE TWO BOXES
+*                    COMPUTES THE AVERAGE OF THE TWO BOXES
 *	STATUS:	     WORKING
 *********************************************************************
 *
-R2	     EQU   2 			WORK REGISTER   EVEN/
+R2	 EQU   2 	    WORK REGISTER   EVEN/
 R3       EQU   3            WORK REGISTER        ODD PAIR
 R4       EQU   4            WORK REGISTER   EVEN/
 R5       EQU   5            WORK REGISTER        ODD PAIR
-R12	     EQU   12			BASE REGISTER
-R14		 EQU   14			RETURN REGISTER
+R12	 EQU   12	    BASE REGISTER
+R14      EQU   14	    RETURN REGISTER
 *
-		 BALR  R12,0        LOAD BASE REGISTER
-		 USING BASE,R12		DECLARE BASE ADDRESS AND REGISTER
+	 BALR  R12,0        LOAD BASE REGISTER
+	 USING BASE,R12     DECLARE BASE ADDRESS AND REGISTER
 *
 * COMPUTE BOX 1, V1 = L1 * W1 * H1
 *
-BASE     L	   R3,L1		LOAD L1 INTO ODD REGISTER
-		 M     R2,W1        MULTIPLY L1 BY W1
-		 M     R2,H1        MULTIPLY L1 * W1 BY H1
-		 ST    R3,V1        STORE RESULT AT V1
+BASE     L     R3,L1	    LOAD L1 INTO ODD REGISTER
+	 M     R2,W1        MULTIPLY L1 BY W1
+	 M     R2,H1        MULTIPLY L1 * W1 BY H1
+	 ST    R3,V1        STORE RESULT AT V1
 *
 * COMPUTE BOX 2, V2 = L2 * W2 * H2
 *
-        L	   R3,L2		LOAD L2 INTO ODD REGISTER
-		 M     R2,W2        MULTIPLY L2 BY W2
-		 M     R2,H2        MULTIPLY L2 * W2 BY H2
-		 ST    R3,V2        STORE RESULT AT V2
+         L     R3,L2	    LOAD L2 INTO ODD REGISTER
+	 M     R2,W2        MULTIPLY L2 BY W2
+	 M     R2,H2        MULTIPLY L2 * W2 BY H2
+	 ST    R3,V2        STORE RESULT AT V2
 *
 * COMPUTE AVERAGE, A = (V1 + V2) / B
 *
-         L	   R2,V1		LOAD V1 INTO ODD REGISTER
-		 A     R2,V2        ADD V2 TO V1
-		 ST    R2,A         STORE RESULT AT A
-		 L     R3,A         LOAD V1 + V2 INTO ODD REGISTER
-		 D     R2,B         DIVIDE V1 + V2 BY 2
-		 ST    R3,A         STORE RESULT AT A
+         L     R2,V1	    LOAD V1 INTO ODD REGISTER
+	 A     R2,V2        ADD V2 TO V1
+	 ST    R2,A         STORE RESULT AT A
+	 L     R3,A         LOAD V1 + V2 INTO ODD REGISTER
+	 D     R2,B         DIVIDE V1 + V2 BY 2
+	 ST    R3,A         STORE RESULT AT A
 *
-		 BCR   X'F',R14		RETURN
+	 BCR   X'F',R14	    RETURN
 *
-L1		 DC    F'4'         LENGTH OF BOX 1
-W1		 DC    F'5'         WIDTH OF BOX 1
-H1		 DC    F'6'         HEIGHT OF BOX 1
+L1	 DC    F'4'         LENGTH OF BOX 1
+W1	 DC    F'5'         WIDTH OF BOX 1
+H1	 DC    F'6'         HEIGHT OF BOX 1
 V1       DS    F            VOLUME OF BOX 1
 
 L2       DC    F'7'         LENGTH OF BOX 2
 W2       DC    F'8'         WIDTH OF BOX 2
 H2       DC    F'9'         HEIGHT OF BOX 2
-V2		 DS    F            VOLUME OF BOX 2
+V2	 DS    F            VOLUME OF BOX 2
 
 A        DS    F            AVERAGE OF BOXES
 B        DC    F'2'         NUMBER OF BOXES, USED FOR CALCULATING AVERAGE
 
-		 END   BOXES
+	 END   BOXES
