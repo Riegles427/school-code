@@ -4,6 +4,9 @@ This program is designed for a user to rent items from a rental machine. The mul
 
 ## Files
 
-1. LastName.txt is the file which the surnames are based off of.
-2. Assignment 14.docx is the hard copy of which was handed in, demonstrating functionality according to the Professor's requirements.
+1. AbstractRentalItem.java is the superclass for which the movie and video game subclasses inherit from
+2. Movie.java is the subclass that handles items of type movie
+3. VideoGame.java is the subclass that handles items of type video game
+4. RentalItem.java is the class that the user uses to rent items
+5. Assignment #3.docx is the hard copy of which was handed in, demonstrating functionality according to the Professor's requirements.
 
