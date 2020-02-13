@@ -5,5 +5,5 @@ This program is designed to search through a file of weather data for nearly eve
 ## Files
 
 1. AlbanyWeather.txt is the file where the weather data originates
-2. Alabny_weather.java is the program that does the desired task
+2. Albany_weather.java is the program that does the desired task
 3. Assignment 1.docx is the hard copy that was handed in to demonstrate functionality according to the Professor's specifications
