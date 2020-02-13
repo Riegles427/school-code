@@ -6,6 +6,6 @@ This program is designed for a user to rent items from a rental machine. The mul
 
 1. AbstractRentalItem.java is the superclass for which the movie and video game subclasses inherit from
 2. Assignment #3.docx is the hard copy of which was handed in, demonstrating functionality according to the Professor's requirements.
+4. ItemRental.java is the class that the user uses to rent items
 3. Movie.java is the subclass that handles items of type movie
-4. RentalItem.java is the class that the user uses to rent items
 5. VideoGame.java is the subclass that handles items of type video game
