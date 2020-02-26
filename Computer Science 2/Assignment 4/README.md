@@ -5,3 +5,4 @@ This program is designed for a user to enter two values to have them be multipli
 ## Files
 
 1. RecursiveAddition.java is the class that handles the entire program
+2. Assignment 4.docx is the hard copy that was handed in to demonstrate functionality according to the Professor's specifications
