@@ -7,9 +7,9 @@ package spring_2020;
 public abstract class AbstractRentalItem {
 
 	String title;
-	private int yearOfRelease;
-	private int slot;
-	private int quantity;
+	int yearOfRelease;
+	int slot;
+	int quantity;
 
 	/**
 	 * @param title         name of the rental item
